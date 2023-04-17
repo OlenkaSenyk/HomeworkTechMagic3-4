@@ -1,0 +1,139 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.page-title {
+  margin: 30px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 36px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: 60px;
+}
+
+.content__queue {
+  width: 70%;
+  height: 100px;
+  padding: 15px;
+  border-top: 3px dashed black;
+  border-bottom: 3px dashed black;
+  display: inherit;
+  flex-direction: row-reverse;
+  text-align: center;
+  font-size: 24px;
+  overflow-x: scroll;
+}
+
+.content__item {
+  min-width: 100px;
+  background-color: #fff480;
+  position: relative;
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.content__item__index {
+  position: absolute;
+  margin: 5px 7px;
+  top: 0;
+  right: 0;
+}
+
+.content__info {
+  display: inherit;
+  justify-content: center;
+  grid-gap: 10%;
+}
+
+.content__decor {
+  width: 450px;
+  box-sizing: border-box;
+  border-left: 3px dashed black;
+  border-right: 3px dashed black;
+  display: inherit;
+  flex-direction: column;
+  padding: 10px 30px;
+  font-size: 22px;
+}
+
+.content__info-title {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 28px;
+}
+
+.content__form-title--margin {
+  margin-bottom: 15px;
+}
+
+.content__tip {
+  font-size: 18px;
+  text-align: center;
+  color: grey;
+  margin: 5px 0 15px 0;
+}
+
+.content__field {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  align-items: center;
+  margin: 7px 0;
+}
+
+.content__input {
+  font-size: 16px;
+  padding: 5px 7px;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+}
+
+.content__input.valid {
+  outline: 2px solid green;
+}
+
+.content__input:focus.valid {
+  outline: 2px solid green;
+}
+
+.content__input:focus.invalid {
+  outline: 2px solid red;
+}
+
+.content__input:focus {
+  outline: 2px solid black;
+}
+
+.content__btn {
+  background-color: rgba(255, 244, 128, 0.5);
+  font-size: 18px;
+  margin: 5px 40px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.content__btn:hover,
+.content__item:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px #818181;
+  transition: 0.3s;
+}
+
+.content__btn:hover {
+  background-color: #fff480;
+}
+
+.content__add-btn {
+  margin-top: 10px;
+}
+
+.content__detail {
+  margin: 0 0 10px 30px;
+}

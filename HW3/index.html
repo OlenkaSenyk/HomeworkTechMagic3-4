@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HW3</title>
+    <link href="reset.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="work-with-queue.js" defer></script>
+  </head>
+
+  <body>
+    <h1 class="page-title">Guests Queue</h1>
+
+    <main class="content">
+      <ul class="content__queue"></ul>
+
+      <div class="content__info">
+        <div class="content__form content__decor" id="guest-form">
+          <h2 class="content__info-title content__form-title--margin">
+            Guest Management
+          </h2>
+          <label class="content__field">
+            <span>Name:</span>
+            <input
+              class="content__input"
+              id="name-input"
+              type="text"
+              placeholder="Ivan"
+              required
+            />
+          </label>
+          <label class="content__field">
+            <span>Age:</span>
+            <input
+              class="content__input"
+              id="age-input"
+              type="number"
+              placeholder="20"
+              min="1"
+              max="100"
+              required
+            />
+          </label>
+          <label class="content__field">
+            <span>Email:</span>
+            <input
+              class="content__input"
+              id="email-input"
+              type="email"
+              placeholder="page@gmail.com"
+              required
+            />
+          </label>
+          <label class="content__field">
+            <span>Phone:</span>
+            <input
+              class="content__input"
+              id="phone-input"
+              type="tel"
+              placeholder="+380501234567"
+              required
+            />
+          </label>
+          <label class="content__field">
+            <span>Color:</span>
+            <input
+              class="content__input"
+              id="color-input"
+              type="color"
+              value="#fff480"
+            />
+          </label>
+          <button class="content__btn content__add-btn" id="add-btn">
+            Add Guest
+          </button>
+          <button class="content__btn content__del-btn" onclick="deleteGuest()">
+            Delete Guest
+          </button>
+        </div>
+
+        <div class="content__details content__decor">
+          <h2 class="content__info-title">Guest Details</h2>
+          <span class="content__tip">(Click on guest to get more info)</span>
+          <b>Name:</b>
+          <span class="content__detail" id="name-output"></span>
+          <b>Age:</b>
+          <span class="content__detail" id="age-output"></span>
+          <b>Email:</b>
+          <span class="content__detail" id="email-output"></span>
+          <b>Phone:</b>
+          <span class="content__detail" id="phone-output"></span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
