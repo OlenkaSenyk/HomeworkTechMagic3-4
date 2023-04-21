@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HW4</title>
+    <link href="reset.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="customError.js" defer></script>
+    <script src="note.js" defer></script>
+    <script src="post.js" defer></script>
+    <script src="todo.js" defer></script>
+    <script src="photo.js" defer></script>
+    <script src="requests.js" type="module"></script>
+  </head>
+  <body>
+    <h1 class="page-title">Notes List</h1>
+    <main class="content">
+      <table class="content__info-table" id="table"></table>
+
+      <div class="content__management">
+        <label class="content__type-label">
+          <span>Type:</span>
+          <select id="note-type" class="content__input">
+            <option value="1">Photo</option>
+            <option value="2">Post</option>
+            <option value="3">Todo</option>
+          </select>
+        </label>
+
+        <span id="content__instruction"
+          >Enter information and then make double click on button</span
+        >
+
+        <label class="content__label" id="note-id-label">
+          <span>Id:</span>
+          <input id="note-id" class="content__input" type="number" min="0" />
+        </label>
+        <label class="content__label" id="note-title-label">
+          <span>Title:</span>
+          <input id="note-title" class="content__input" type="text" />
+        </label>
+        <label class="content__label" id="note-albumId-label">
+          <span>Album Id:</span>
+          <input id="note-albumId" class="content__input" type="number" />
+        </label>
+        <label class="content__label" id="note-url-label">
+          <span>Url:</span>
+          <input id="note-url" class="content__input" type="url" />
+        </label>
+        <label class="content__label" id="note-thumbnailUrl-label">
+          <span>Thumbnail Url:</span>
+          <input id="note-thumbnailUrl" class="content__input" type="url" />
+        </label>
+        <label class="content__label" id="note-userId-label">
+          <span>User Id:</span>
+          <input
+            id="note-userId"
+            class="content__input"
+            type="number"
+            min="0"
+          />
+        </label>
+        <label class="content__label" id="note-body-label">
+          <span>Body</span>
+          <input id="note-body" class="content__input" type="text" />
+        </label>
+        <label class="content__label" id="note-complete-label">
+          <span>Complete</span>
+          <select id="note-complete" class="content__input">
+            <option value="0">False</option>
+            <option value="1">True</option>
+          </select>
+        </label>
+
+        <div class="content__buttons">
+          <button class="content__btn" id="get-all-btn">Get all</button>
+          <button class="content__btn" id="get-one-btn">Get one</button>
+          <button class="content__btn" id="add-one-btn">Add one</button>
+          <button class="content__btn" id="delete-one-btn">Delete one</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
