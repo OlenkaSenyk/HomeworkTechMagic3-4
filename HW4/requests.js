@@ -131,22 +131,28 @@ getAllBtn.addEventListener("click", () => {
   let noteType = document.getElementById("note-type").value;
   switch (noteType) {
     case "1":
-      getAllData("/photos").then((json) => {
-        notes = json.map((element) => Photo.createPhoto(element));
-        createTable(photoTitles, notes);
-      });
+      getAllData("/photos")
+        .then((json) => {
+          notes = json.map((element) => Photo.createPhoto(element));
+          createTable(photoTitles, notes);
+        })
+        .catch((e) => alert(e));
       break;
     case "2":
-      getAllData("/posts").then((json) => {
-        notes = json.map((element) => Post.createPost(element));
-        createTable(postTitles, notes);
-      });
+      getAllData("/posts")
+        .then((json) => {
+          notes = json.map((element) => Post.createPost(element));
+          createTable(postTitles, notes);
+        })
+        .catch((e) => alert(e));
       break;
     case "3":
-      getAllData("/todos").then((json) => {
-        notes = json.map((element) => Todo.createTodo(element));
-        createTable(todoTitles, notes);
-      });
+      getAllData("/todos")
+        .then((json) => {
+          notes = json.map((element) => Todo.createTodo(element));
+          createTable(todoTitles, notes);
+        })
+        .catch((e) => alert(e));
       break;
   }
 });
@@ -162,22 +168,28 @@ getOneBtn.addEventListener("dblclick", () => {
   notes = [];
   switch (noteType) {
     case "1":
-      getOneData("/photos/", idField.lastElementChild.value).then((json) => {
-        notes.push(Photo.createPhoto(json));
-        createTable(photoTitles, notes);
-      });
+      getOneData("/photos/", idField.lastElementChild.value)
+        .then((json) => {
+          notes.push(Photo.createPhoto(json));
+          createTable(photoTitles, notes);
+        })
+        .catch((e) => alert(e));
       break;
     case "2":
-      getOneData("/posts/", idField.lastElementChild.value).then((json) => {
-        notes.push(Post.createPost(json));
-        createTable(postTitles, notes);
-      });
+      getOneData("/posts/", idField.lastElementChild.value)
+        .then((json) => {
+          notes.push(Post.createPost(json));
+          createTable(postTitles, notes);
+        })
+        .catch((e) => alert(e));
       break;
     case "3":
-      getOneData("/todos/", idField.lastElementChild.value).then((json) => {
-        notes.push(Todo.createTodo(json));
-        createTable(todoTitles, notes);
-      });
+      getOneData("/todos/", idField.lastElementChild.value)
+        .then((json) => {
+          notes.push(Todo.createTodo(json));
+          createTable(todoTitles, notes);
+        })
+        .catch((e) => alert(e));
       break;
   }
   hideAllElements(true);
@@ -214,20 +226,22 @@ addOneBtn.addEventListener("dblclick", () => {
         thumbnailField.lastElementChild.value
       );
       url = "/photos";
-      addOneData(url, note).then((e) =>
-        alert(
-          "Data was added successfully:\n\tid: " +
-            e.id +
-            "\n\ttitle: " +
-            e.title +
-            "\n\talbumId: " +
-            e.albumId +
-            "\n\turl: " +
-            e.url +
-            "\n\tthumbnailUrl: " +
-            e.thumbnailUrl
+      addOneData(url, note)
+        .then((e) =>
+          alert(
+            "Data was added successfully:\n\tid: " +
+              e.id +
+              "\n\ttitle: " +
+              e.title +
+              "\n\talbumId: " +
+              e.albumId +
+              "\n\turl: " +
+              e.url +
+              "\n\tthumbnailUrl: " +
+              e.thumbnailUrl
+          )
         )
-      );
+        .catch((e) => alert(e));
       break;
     case "2":
       note = new Post(
@@ -237,18 +251,20 @@ addOneBtn.addEventListener("dblclick", () => {
         bodyField.lastElementChild.value
       );
       url = "/posts";
-      addOneData(url, note).then((e) =>
-        alert(
-          "Data was added successfully:\n\tid: " +
-            e.id +
-            "\n\ttitle: " +
-            e.title +
-            "\n\tuserId: " +
-            e.userId +
-            "\n\tbody: " +
-            e.body
+      addOneData(url, note)
+        .then((e) =>
+          alert(
+            "Data was added successfully:\n\tid: " +
+              e.id +
+              "\n\ttitle: " +
+              e.title +
+              "\n\tuserId: " +
+              e.userId +
+              "\n\tbody: " +
+              e.body
+          )
         )
-      );
+        .catch((e) => alert(e));
       break;
     case "3":
       note = new Todo(
@@ -258,18 +274,20 @@ addOneBtn.addEventListener("dblclick", () => {
         completeField.lastElementChild.value
       );
       url = "/todos";
-      addOneData(url, note).then((e) =>
-        alert(
-          "Data was added successfully:\n\tid: " +
-            e.id +
-            "\n\ttitle: " +
-            e.title +
-            "\n\tuserId: " +
-            e.userId +
-            "\n\tcomplete: " +
-            e.complete
+      addOneData(url, note)
+        .then((e) =>
+          alert(
+            "Data was added successfully:\n\tid: " +
+              e.id +
+              "\n\ttitle: " +
+              e.title +
+              "\n\tuserId: " +
+              e.userId +
+              "\n\tcomplete: " +
+              e.completed
+          )
         )
-      );
+        .catch((e) => alert(e));
       break;
   }
   hideAllElements(true);
@@ -286,19 +304,19 @@ deleteOneBtn.addEventListener("dblclick", () => {
   notes = [];
   switch (noteType) {
     case "1":
-      getOneData("/photos/", idField.lastElementChild.value).then(() => {
-        alert("Data was successfully deleted");
-      });
+      deleteOneData("/photos/", idField.lastElementChild.value)
+        .then(() => alert("Data was successfully deleted"))
+        .catch((e) => alert(e));
       break;
     case "2":
-      getOneData("/posts/", idField.lastElementChild.value).then(() => {
-        alert("Data was successfully deleted");
-      });
+      deleteOneData("/posts/", idField.lastElementChild.value)
+        .then(() => alert("Data was successfully deleted"))
+        .catch((e) => alert(e));
       break;
     case "3":
-      getOneData("/todos/", idField.lastElementChild.value).then(() => {
-        alert("Data was successfully deleted");
-      });
+      deleteOneData("/todos/", idField.lastElementChild.value)
+        .then(() => alert("Data was successfully deleted"))
+        .catch((e) => alert(e));
       break;
   }
   hideAllElements(true);
