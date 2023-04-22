@@ -10,7 +10,7 @@ https://projects-2878f.web.app/
  - HTML
  - CSS
  - JavaScript
- - 
+ 
 ## Description
 
 Notes List will help you to make simple requests such as receiving, adding and deleting data. It will not allow you to delete or add your own data, but it will show you the usage of requests.
