@@ -1,4 +1,6 @@
-class Post extends Note {
+import { Note } from "./note.js";
+
+export class Post extends Note {
   constructor(id, title, userId, body) {
     super(id, title);
     this.userId = userId;

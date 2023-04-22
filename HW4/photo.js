@@ -1,4 +1,6 @@
-class Photo extends Note {
+import { Note } from "./note.js";
+
+export class Photo extends Note {
   constructor(id, title, albumId, url, thumbnailUrl) {
     super(id, title);
     this.albumId = albumId;

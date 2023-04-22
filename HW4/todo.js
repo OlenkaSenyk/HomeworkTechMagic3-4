@@ -1,4 +1,6 @@
-class Todo extends Note {
+import { Note } from "./note.js";
+
+export class Todo extends Note {
   constructor(id, title, userId, completed) {
     super(id, title);
     this.userId = userId;

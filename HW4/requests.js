@@ -1,3 +1,8 @@
+import { CustomError } from "./customError.js";
+import { Photo } from "./photo.js";
+import { Post } from "./post.js";
+import { Todo } from "./todo.js";
+
 const table = document.getElementById("table");
 const getAllBtn = document.getElementById("get-all-btn");
 const getOneBtn = document.getElementById("get-one-btn");
